@@ -1,0 +1,933 @@
+/* Global Styles */
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    scroll-behavior: smooth;
+  }
+  
+  body {
+    background-color: #000000;
+    color: #ffffff;
+    font-family: 'Nunito', Arial, sans-serif;
+    scroll-snap-type: y mandatory;
+  }
+  
+  .box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start; /* Change justify-content to flex-start */
+    min-height: 100vh; /* Change height to min-height */
+    overflow-x: hidden; /* Add this line */
+  }
+  
+
+/* Base styles */
+.hero-section {
+    position: relative;
+    width: 100vw;
+    height: calc(100vh * 1); /* Increase the height to 1.5 times */
+    padding: 20px;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    /* Your existing styles */
+    opacity: 0; /* Initially hide the purpose items */
+    transform: translateY(40px);
+    transition: opacity 1s ease, transform 1s ease;
+  }
+
+  .hero-section.appear {
+    opacity: 1; /* Show the purpose items when they appear in the viewport */
+    transform: translateY(0px);
+  }
+
+
+  #video-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .hero-content {
+    position: relative; /* Ensure content stays on top of the video */
+    z-index: 1; /* Adjust the stacking order */
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Add text shadow */
+    animation: textGrow 1s forwards; /* Add animation */
+    padding: 300px;
+    text-align: left; /* Align the text to the left */
+  }
+  
+  @keyframes textGrow {
+    0% {
+      transform: scale(0.8); /* Initial scale value */
+    }
+    100% {
+      transform: scale(1); /* Final scale value */
+    }
+  }
+  
+  .hero-title {
+    color: #ffffff;
+    font-size: 60px; /* Increase the font size */
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .hero-description {
+    color: #ffffff;
+    font-size: 32px; /* Increase the font size */
+    margin-bottom: 20px;
+  }
+  
+  .hero-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #FF4545;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    font-size: 18px;
+    margin-top: 20px;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  .hero-button:hover {
+    background-color: #1E1E1E;
+    color: #ffffff;
+    transform: translateZ(5px);
+  }
+  
+  /* Header Styles */
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    opacity: .8;
+    background-color: rgba(0, 0, 0, 1);
+    padding: 20px;
+    z-index: 50;
+    animation-name: fade-in;
+    animation-duration: 1s;
+    animation-timing-function: ease-in;
+    perspective: 1000px;
+  }
+  
+  @keyframes fade-in {
+    from {
+      opacity: 0;
+      transform: translateZ(-20px); /* Adjust the Z translation as needed */
+    }
+    to {
+      opacity: 0.8;
+      transform: translateZ(0);
+    }
+  }
+  
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    transform-style: preserve-3d;
+  }
+  
+  .header-title {
+    margin: 0;
+    font-size: 32px;
+    transform: translateZ(30px);
+    cursor: pointer;
+    transition: color 0.3s ease, text-shadow 0.3s ease;
+  }
+  
+  nav ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    transform: translateZ(30px);
+  }
+  
+  nav ul li {
+    margin-left: 25px;
+  }
+  
+  nav ul li a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 18px;
+    padding: 5px 10px;
+    border-radius: 20px;
+    transition: background-color 0.3s ease;
+  }
+  
+  nav ul li a:hover {
+    background-color: #FF4545; /* Red color to blend with rocket.glb */
+  }
+
+  .header-title:hover {
+    color: #FF4545;
+    text-shadow: 0 0 4px #FF4545;
+  }
+  
+  .separator {
+    height: 4px;
+    background: linear-gradient(to right, #FF4545, #ffffff);
+    border-radius: 2px;
+    margin: 40px 0;
+  }
+
+  .scroll-popup {
+    position: fixed;
+    bottom: 10%;
+    right: 50%;
+    transform: translate(50%, 50%);
+    z-index: 999;
+    opacity: 1;
+    transition: opacity 0.5s ease;
+  }
+
+  .scroll-popup::before {
+    content: "\f078"; /* Unicode character for a down arrow */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    margin-right: 15px;
+    transform: scale(1.2);
+    cursor: pointer;
+    border-radius: 50%;
+  }
+  
+  .scroll-popup.hide {
+    opacity: 0;
+  }
+  
+  .scroll-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #FF4545;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+  }
+  
+  .scroll-button:hover {
+    background-color: #1E1E1E;
+    transform: scale(1.05);
+  }
+
+/* Purpose Section */
+.purpose-section {
+    background: radial-gradient(ellipse at center, #FF4545, #1E1E1E); /* Modify the gradient colors */
+    padding: 150px;
+    text-align: center; /* Center the text */
+    margin-bottom: 100px;
+    border-radius: 50px; /* Add border-radius for rounded corners */
+  }
+  
+  .purpose-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center; /* Center the text */
+  }
+  
+  
+  .purpose-title {
+    font-size: 48px; /* Increase the font size */
+    font-weight: bold;
+    color: #ffffff;
+    margin-bottom: 40px;
+    /* Your existing styles */
+    opacity: 0; /* Initially hide the purpose items */
+    transform: translateY(40px);
+    transition: opacity 1s ease, transform 1s ease;
+  }
+  
+  .purpose-title.appear {
+    opacity: 1; /* Show the purpose items when they appear in the viewport */
+    transform: translateY(0);
+  }
+
+  /* Purpose Title Icon */
+    .purpose-title i {
+    display: block;
+    font-size: 64px; /* Adjust the size as desired */
+    margin-bottom: 20px;
+  }
+  
+  /* Purpose Item Title Icon */
+  .purpose-item-title i {
+    display: block;
+    font-size: 40px; /* Adjust the size as desired */
+    margin-right: 10px; /* Add some spacing between the icon and the title */
+  }
+  
+  .purpose-list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px; /* Increase the gap for more spacing */
+    margin-top: 50px; /* Increase the margin for more spacing */
+  }
+  
+  .purpose-item {
+    flex: 1 1 300px; /* Adjust the width to create a more square shape */
+    height: 300px; /* Adjust the height to create a more square shape */
+    padding: 50px;
+    background-color: #2b2b2b;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+    cursor: pointer; /* Add cursor pointer */
+    /* Your existing styles */
+    opacity: 0; /* Initially hide the purpose items */
+    transform: translateY(40px);
+    transition: opacity 1s ease, transform 1s ease;
+  }
+
+  .purpose-item.appear {
+    opacity: 1; /* Show the purpose items when they appear in the viewport */
+    transform: translateY(0);
+  }
+
+  .purpose-item:hover {
+    transform: scale(1.05);
+    background-color: #1e1e1e; /* Add a different background color on hover */
+  }
+  
+  .purpose-item-title {
+    font-size: 28px; /* Decrease the font size for better balance */
+    font-weight: bold;
+    color: #FF4545;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Add text shadow */
+  }
+  
+  .purpose-item-description {
+    font-size: 20px; /* Increase the font size for better readability */
+    color: #ffffff;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6); /* Add text shadow */
+  }
+  
+  .purpose-item-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #FF4545;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    margin-top: 10px;
+  }
+  
+  .purpose-item-button:hover {
+    background-color: #1E1E1E;
+    transform: scale(1.05);
+  }
+
+  
+  .modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.6);
+    z-index: 999;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+  }
+  
+  .modal.show {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 1;
+  }
+  
+  .modal-content {
+    background-color: #2b2b2b;
+    color: #ffffff;
+    border-radius: 8px;
+    padding: 30px;
+    width: 50%;
+    margin: 0 auto;
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+  }
+  
+  .modal.show .modal-content {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .modal-title {
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+  }
+  
+  .modal-description {
+    font-size: 18px;
+    color: #ffffff;
+    margin-bottom: 30px;
+    text-indent: 20px;
+  }
+  
+  .modal-close-button {
+    font: 18px;
+    background-color: #FF4545;
+    color: #ffffff;
+    padding: 8px 16px;
+    border-radius: 4px;
+    text-decoration: none;
+  }
+  
+  .modal-close-button:hover {
+    background-color: #1E1E1E;
+    cursor: pointer;
+  }
+  
+
+
+  .approach-section {
+    background-image: url('images/guillermo-ferla-lLExhYl-cXQ-unsplash.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 100px 0; /* Increase the padding for more space */
+    margin: 0;
+    width: 100%;
+  }
+  
+  .approach-container {
+    max-width: 800px;
+    margin: 0 auto;
+    text-align: center;
+  }
+  
+  .approach-title {
+    color: #ffffff;
+    font-size: 72px; /* Increase the font size for a larger title */
+    font-weight: bold;
+    margin-bottom: 50px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6), 0 0 5px #000000;
+    /* existing styles */
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1s ease, transform 1s ease;
+  }
+  
+  .approach-title.appear {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .approach-steps {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .approach-step {
+    background-color: #2b2b2b;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease;
+    cursor: pointer;
+    margin-bottom: 20px;
+    /* existing styles */
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1s ease, transform 1s ease;
+  }
+  
+  .approach-step.appear {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .approach-step:hover {
+    transform: scale(1.05);
+    background-color: #1E1E1E;
+  }
+  
+  .approach-step-icon {
+    color: #FF4545;
+    font-size: 36px; /* Increase the font size for larger icons */
+    margin-right: 10px; /* Add some spacing between the icon and the title */
+  }
+  
+  .approach-step-title {
+    color: #FF4545;
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  }
+  
+  .approach-step-description {
+    color: #ffffff;
+    font-size: 18px;
+    line-height: 1.4;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+  }
+  
+  .approach-step-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #FF4545;
+    color: #ffffff;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    margin-top: 10px;
+    font-size: 20px;
+    font-weight: bold;
+  }
+  
+  .approach-step-button:hover {
+    background-color: #ffffff;
+    color: #FF4545;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.3);
+  }
+  
+  
+
+  
+ .about-section {
+    background: radial-gradient(ellipse at center, #FF4545, #1E1E1E); /* Modify the gradient colors */
+    padding: 150px;
+    text-align: center; /* Center the text */
+    margin-bottom: 100px;
+    border-radius: 50px; /* Add border-radius for rounded corners */
+    max-width: 75%;
+    margin: 0 auto;
+    /* existing styles */
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1s ease, transform 1s ease;
+  }
+
+.about-section.appear {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+.about-container {
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+.about-title {
+  font-size: 36px;
+  font-weight: bold;
+  color: #ffffff;
+  margin-bottom: 40px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+  /* existing styles */
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.about-title.appear {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.about-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.about-description {
+  margin-bottom: 40px;
+  /* existing styles */
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+
+.about-description.appear {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.about-subtitle {
+  font-size: 24px;
+  font-weight: bold;
+  color: #FF4545;
+  margin-bottom: 10px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+.about-paragraph {
+  font-size: 18px;
+  color: #ffffff;
+  margin-bottom: 20px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.6);
+}
+
+
+.gallery-container {
+    max-width: 100%;
+    overflow: hidden;
+    position: relative;
+    margin-bottom: 20px;
+    /* existing styles */
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1s ease, transform 1s ease;
+  }
+
+.gallery-container.appear {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .about-images {
+    display: flex;
+    justify-content: flex-start; /* Adjust alignment to start */
+    align-items: center;
+    overflow: hidden;
+    width: max-content; /* Add this to allow horizontal expansion */
+  }
+  
+  .about-images img {
+    max-height: 400px;
+    width: auto; /* Adjust width to auto */
+    object-fit: contain; /* Adjust object-fit to contain */
+    background-color: black;
+    opacity: 0.5;
+    transition: opacity 0.3s ease;
+    margin: 0 10px;
+    border-radius: 8px;
+  }
+  
+  .about-images img.center {
+    opacity: 1;
+    transform: scale(1.1);
+  }
+  
+  .arrow-button {
+    display: inline-block;
+    padding: 20px; /* Increase the padding to make the arrows bigger */
+    background-color: transparent;
+    color: #ffffff;
+    border: none;
+    font-size: 36px; /* Adjust the font size to make the arrows longer */
+    transition: color 0.3s ease;
+    cursor: pointer;
+    /* existing styles */
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1s ease, transform 1s ease;
+  }
+
+.arrow-button.appear {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .arrow-button:hover {
+    color: #FF4545;
+  }
+
+
+
+  .contact-section {
+    padding: 80px 0;
+    margin: 0;
+    width: 100%;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
+  }
+  
+  .contact-section {
+    max-width: 50%;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border-radius: 8px;
+    padding: 40px;
+    box-shadow: 0px 2px 6px rgba(0, 0, 0, 0.2);
+    /* existing styles */
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1s ease, transform 1s ease;
+  }
+
+.contact-section.appear {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  .contact-section h2 {
+    color: #FF4545;
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+  
+  .form-group {
+    margin-bottom: 20px;
+    /* existing styles */
+    opacity: 0;
+    transform: translateY(40px);
+    transition: opacity 1s ease, transform 1s ease;
+  }
+
+.form-group.appear {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  
+  label {
+    display: block;
+    color: #1E1E1E;
+    font-size: 18px;
+    margin-bottom: 10px;
+  }
+  
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  textarea {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #F5F5F5;
+    font-size: 16px;
+    color: #1E1E1E;
+  }
+  
+  select {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    background-color: #F5F5F5;
+    font-size: 16px;
+    color: #1E1E1E;
+  }
+  
+  textarea {
+    height: 120px;
+  }
+  
+  button[type="submit"] {
+    display: block;
+    width: 100%;
+    padding: 12px;
+    background-color: #1E1E1E;
+    color: #ffffff;
+    border: none;
+    border-radius: 4px;
+    font-size: 16px;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  button[type="submit"]:hover {
+    background-color: #FF4545;
+  }
+  
+  
+  
+.contact-form .form-field {
+  position: relative;
+  margin-bottom: 20px;
+}
+
+.contact-form .form-field label {
+  display: block;
+  font-weight: bold;
+}
+
+.contact-form .form-field input {
+  padding: 8px;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+
+.contact-form .form-field .arrow {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  color: #00cc00; /* Green color */
+}
+
+
+footer {
+    background-color: #1E1E1E;
+    padding: 40px 40px 0 40px;
+    color: #ffffff;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .footer-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .footer-logo img {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+  }
+  
+  .footer-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 0;
+    color: #ffffff;
+    text-decoration: none;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-title:hover {
+    color: #FF4545;
+  }
+  
+  .footer-heading {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    color: #ffffff;
+    text-decoration: underline;
+  }
+  
+  .footer-links ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .footer-links li {
+    margin-bottom: 5px;
+  }
+  
+  .footer-links a {
+    text-decoration: none;
+    color: #ffffff;
+    font-size: 16px;
+    transition: color 0.3s ease;
+  }
+  
+  .footer-links a:hover {
+    color: #FF4545;
+  }
+  
+  .footer-info {
+    font-size: 16px;
+    color: #ffffff;
+    margin-bottom: 10px;
+  }
+  
+  .footer-info i {
+    margin-right: 5px;
+    color: #FF4545;
+  }
+  
+  .footer-bottom {
+    background-color: #141414;
+    margin-top: 50px;
+    padding: 10px 0;
+    font-size: 14px;
+    color: #999999;
+  }
+  
+  
+
+  /* Hide the default scrollbar */
+body::-webkit-scrollbar {
+    width: 12px;
+  }
+  
+/* Thumb */
+body::-webkit-scrollbar-thumb {
+    background: linear-gradient(to bottom, #696969, #333333); /* Texture gradient from light gray to dark gray */
+    border-radius: 8px;
+  }
+  
+  
+  body::-webkit-scrollbar-thumb:hover {
+    background-color: #3d3d3d;
+  }
+  
+  /* Corner */
+  body::-webkit-scrollbar-corner {
+    background-color: #3d3d3d;
+  }
+  
+
+  #space-cursor {
+    position: fixed;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 9999;
+    width: 40px;
+    height: 40px;
+  }
+  
+  .space-circle {
+    position: absolute;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background-color: #ffffff;
+    animation: trail .5s infinite;
+  }
+  
+  @keyframes trail {
+    0% {
+      opacity: 1;
+      transform: scale(1);
+      background-color: #ffffff;
+    }
+    25% {
+      opacity: .75;
+      transform: scale(.75);
+      background-color: #ffe600;
+    }
+    50% {
+      opacity: 0.5;
+      transform: scale(.5);
+      background-color: #ff7300;
+    }
+    75% {
+      opacity: 0.25;
+      transform: scale(.25);
+      background-color: #d80000;
+    }
+    100% {
+      opacity: 0;
+      transform: scale(0);
+      background-color: #ff0000;
+    }
+  }
+  

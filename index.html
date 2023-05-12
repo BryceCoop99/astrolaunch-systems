@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="x-ua-compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="mobile.css">
+    <title>AstroLaunch Systems</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <div id="space-cursor"></div>
+
+    <header>
+      <div class="header-container">
+        <h1 class="header-title"><i class="fas fa-rocket"></i> AstroLaunch Systems</h1>
+        <nav>
+          <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#purpose-section">Missions</a></li>
+            <li><a href="#approach-section">Approach</a></li>
+            <li><a href="#about-section">About</a></li>
+            <li><a href="#contact-section">Contact</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    
+    <div class="box" id="home">
+        <section class="hero-section">
+            <video autoplay muted loop id="video-background">
+                <source src="videos\nebula.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+          <div class="hero-content">
+            <h2 class="hero-title">Explore Our Revolutionary Space Projects</h2>
+            <p class="hero-description">Experience the cutting-edge technologies and breakthrough innovations that power our ambitious space exploration missions.</p>
+            <a href="#" class="hero-button">Learn More</a>
+          </div>
+        </section>
+
+        <div class="scroll-popup">
+            <a href="#purpose-section" class="scroll-button">See Missions</a>
+        </div>
+
+        <div class="separator" id="purpose-section"></div>
+
+        <section class="purpose-section">
+            <div class="purpose-container">
+              <h2 class="purpose-title"><i class="fas fa-meteor"></i> Our Cosmic Missions</h2>
+              <div class="purpose-list">
+                <div class="purpose-item">
+                  <h3 class="purpose-item-title"><i class="fas fa-coffee"></i> Interstellar Coffee</h3>
+                  <p class="purpose-item-description">Explore distant galaxies to source the finest interstellar coffee beans. Because even astronauts need a great cup of joe in space!</p>
+                  <a class="purpose-item-button" id="coffee-modal-btn">Learn More</a>
+                </div>
+                <div class="purpose-item">
+                  <h3 class="purpose-item-title"><i class="fas fa-leaf"></i> Zero-Gravity Farming</h3>
+                  <p class="purpose-item-description">Develop zero-gravity farming techniques to cultivate space-grown produce, bringing fresh salads to the final frontier.</p>
+                  <a class="purpose-item-button" id="farming-modal-btn">Learn More</a>
+                </div>
+                <div class="purpose-item">
+                  <h3 class="purpose-item-title"><i class="fas fa-gamepad"></i> Cosmic Entertainment</h3>
+                  <p class="purpose-item-description">Create zero-latency virtual reality games and movies, offering immersive experiences that are truly out of this world.</p>
+                  <a class="purpose-item-button" id="entertainment-modal-btn">Learn More</a>
+                </div>
+                <div class="purpose-item">
+                  <h3 class="purpose-item-title"><i class="fas fa-space-shuttle"></i> Space Tourism with Style</h3>
+                  <p class="purpose-item-description">Design luxurious and fashionable spaceships for the ultimate space tourism experience. Prepare to travel in style!</p>
+                  <a class="purpose-item-button" id="tourism-modal-btn">Learn More</a>
+                </div>
+              </div>
+            </div>
+          </section>
+
+            <!-- Interstellar Coffee Modal -->
+            <div id="coffee-modal" class="modal">
+                <div class="modal-content">
+                <h2 class="modal-title"><i class="fas fa-coffee"></i> Interstellar Coffee</h2>
+                <p class="modal-description">
+                    Explore distant galaxies to source the finest interstellar coffee beans. Because even astronauts need a great cup of joe in space!
+                </p>
+                <p class="modal-description">
+                    In our mission to provide the best coffee experience beyond Earth, we navigate the cosmos in search of planets with ideal coffee-growing conditions. We meticulously select the highest-quality interstellar coffee beans, ensuring they are ethically sourced and sustainably harvested. Our expert team of space baristas has perfected the art of brewing coffee in zero gravity, delivering a rich and flavorful cup of coffee that transcends boundaries.
+                </p>
+                <p class="modal-description">
+                    Join us on this cosmic journey as we continue to push the boundaries of coffee exploration. From the vast reaches of space to your cup, our mission is to provide a truly out-of-this-world coffee experience for all space enthusiasts and caffeine lovers alike.
+                </p>
+                <a class="modal-close-button">Close</a>
+                </div>
+            </div>
+            
+            <!-- Zero-Gravity Farming Modal -->
+            <div id="farming-modal" class="modal">
+                <div class="modal-content">
+                <h2 class="modal-title"><i class="fas fa-leaf"></i> Zero-Gravity Farming</h2>
+                <p class="modal-description">
+                    Develop zero-gravity farming techniques to cultivate space-grown produce, bringing fresh salads to the final frontier.
+                </p>
+                <p class="modal-description">
+                    Our mission is to revolutionize agriculture by overcoming the challenges of cultivating crops in the zero-gravity environment of space. Through advanced hydroponic systems and innovative technologies, we have created a sustainable farming solution that enables us to grow nutrient-rich and delicious produce in the harsh conditions of space.
+                </p>
+                <p class="modal-description">
+                    By harnessing the power of controlled environments and optimized nutrient delivery, we are able to provide astronauts with fresh, organic, and locally grown food during their space missions. Our zero-gravity farming techniques not only support long-duration space travel but also pave the way for future colonization efforts, ensuring food security and self-sustainability for space explorers.
+                </p>
+                <a class="modal-close-button">Close</a>
+                </div>
+            </div>
+
+            <!-- Cosmic Entertainment Modal -->
+            <div id="entertainment-modal" class="modal">
+                <div class="modal-content">
+                <h2 class="modal-title"><i class="fas fa-gamepad"></i> Cosmic Entertainment</h2>
+                <p class="modal-description">
+                    Create zero-latency virtual reality games and movies, offering immersive experiences that are truly out of this world.
+                </p>
+                <p class="modal-description">
+                    At AstroLaunch Systems, we are dedicated to pushing the boundaries of entertainment in the cosmos. Our mission is to transport individuals to captivating virtual worlds where they can explore, interact, and embark on extraordinary adventures.
+                </p>
+                <p class="modal-description">
+                    With our state-of-the-art virtual reality technology, we provide an unparalleled level of immersion and realism. From breathtaking landscapes to thrilling encounters, our virtual experiences are designed to leave a lasting impact on participants.
+                </p>
+                <a class="modal-close-button">Close</a>
+                </div>
+            </div>
+                        
+            <!-- Space Tourism with Style Modal -->
+            <div id="tourism-modal" class="modal">
+                <div class="modal-content">
+                <h2 class="modal-title"><i class="fas fa-space-shuttle"></i> Space Tourism with Style</h2>
+                <p class="modal-description">
+                    Design luxurious and fashionable spaceships for the ultimate space tourism experience. Prepare to travel in style!
+                </p>
+                <p class="modal-description">
+                    Our mission is to redefine the concept of space tourism by combining cutting-edge technology with exquisite design. We believe that the journey to space should not only be a remarkable adventure but also an opportunity to indulge in luxury and elegance.
+                </p>
+                <p class="modal-description">
+                    From the sleek and aerodynamic exterior to the opulent and comfortable interior, our spaceships are meticulously crafted to provide the utmost comfort and style during your cosmic voyage. Every detail, from the plush seating to the state-of-the-art entertainment systems, is carefully designed to ensure an unparalleled experience that surpasses all expectations.
+                </p>
+                <a class="modal-close-button">Close</a>
+                </div>
+            </div>
+
+          <div class="separator" id="approach-section"></div>
+
+          <section class="approach-section">
+            <div class="approach-container">
+              <h2 class="approach-title">Approach AstroLaunch Systems for Your Success</h2>
+              <div class="approach-steps">
+                <div class="approach-step">
+                  <h3 class="approach-step-title"><i class="fas fa-rocket"></i> Step 1: Explore Our Project Catalog</h3>
+                  <p class="approach-step-description">Browse through our extensive project catalog showcasing a wide range of space ventures. From interstellar research to zero-gravity manufacturing, discover the exciting possibilities that await.</p>
+                  <a class="approach-step-button" href="#">Explore <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="approach-step">
+                  <h3 class="approach-step-title"><i class="fas fa-users"></i> Step 2: Consult with Our Experts</h3>
+                  <p class="approach-step-description">Schedule a consultation with our team of experienced scientists and engineers. They will provide valuable insights, guidance, and help you identify the project that aligns with your interests and goals.</p>
+                  <a class="approach-step-button" href="#">Consult <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="approach-step">
+                  <h3 class="approach-step-title"><i class="fas fa-graduation-cap"></i> Step 3: Join Our Astronaut Training Program</h3>
+                  <p class="approach-step-description">Enroll in our exclusive astronaut training program to prepare yourself for the challenges of space exploration. Gain hands-on experience, acquire specialized skills, and train alongside seasoned astronauts.</p>
+                  <a class="approach-step-button" href="#">Join <i class="fas fa-arrow-right"></i></a>
+                </div>
+                <div class="approach-step">
+                  <h3 class="approach-step-title"><i class="fas fa-handshake"></i> Step 4: Secure Funding and Resources</h3>
+                  <p class="approach-step-description">Tap into our extensive network of investors, sponsors, and strategic partners to secure the necessary funding and resources for your space project. We will guide you through the funding process and connect you with the right stakeholders.</p>
+                  <a class="approach-step-button" href="#">Secure <i class="fas fa-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </section>          
+          
+          <div class="separator" id="about-section"></div>
+
+          <section class="about-section">
+            <div class="about-container">
+              <h2 class="about-title"><i class="fas fa-info-circle"></i> About AstroLaunch Services</h2>
+              <div class="about-content">
+                <div class="about-description">
+                  <h3 class="about-subtitle">Our Mission</h3>
+                  <p class="about-paragraph">At AstroLaunch Services, our mission is to revolutionize space exploration and create a future where humanity can thrive beyond Earth. We are committed to pushing the boundaries of technology, innovation, and human potential to unlock the mysteries of the universe and pave the way for interstellar achievements.</p>
+                  <p class="about-paragraph">With a focus on cutting-edge research, groundbreaking projects, and collaborative partnerships, we strive to redefine the possibilities of space travel, colonization, and the utilization of space resources. Our aim is to enable the next generation of cosmic pioneers and inspire a sense of wonder, curiosity, and responsibility towards the cosmos.</p>
+                  <p class="about-paragraph">Join us in our quest to expand the horizons of human exploration, knowledge, and discovery. Together, we can shape a future where space is not only our final frontier but also a new frontier for growth, innovation, and the betterment of humanity.</p>
+                </div>
+                <div class="gallery-container">
+                    <div class="about-images">
+                      <img src="images/gallery/adam-miller-dBaz0xhCkPY-unsplash.jpg" alt="Image 1">
+                      <img src="images/gallery/aldebaran-s-dJlkMGUn9n4-unsplash.jpg" alt="Image 2">
+                      <img src="images/gallery/history-in-hd-e5eDHbmHprg-unsplash.jpg" alt="Image 3">
+                      <img src="images/gallery/ju-guan-D-jLxBtEwaA-unsplash.jpg" alt="Image 4">
+                      <img src="images/gallery/nasa-rTZW4f02zY8-unsplash.jpg" alt="Image 5">
+                    </div>
+                    <button id="prev-button" class="arrow-button">&#8249;</button>
+                    <button id="next-button" class="arrow-button">&#8250;</button>
+                </div>                  
+              </div>
+            </div>
+          </section>
+      
+          <div class="separator" id="contact-section"></div>
+
+          <section class="contact-section">
+            <h2>Contact Us</h2>
+            <form class="contact-form" action="#" method="POST">
+              <div class="form-group">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+                <span class="arrow"></span>
+              </div>
+              <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+                <span class="arrow"></span>
+              </div>
+              <div class="form-group">
+                <label for="phone">Phone Number:</label>
+                <input type="tel" id="phone" name="phone" required>
+                <span class="arrow"></span>
+              </div>
+              <div class="form-group">
+                <label for="method">Preferred Method of Contact:</label>
+                <select id="method" name="method">
+                  <option value="email">Email</option>
+                  <option value="phone">Phone</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="4" required></textarea>
+                <span class="arrow"></span>
+              </div>
+              <button type="submit">Submit</button>
+            </form>
+          </section>
+      
+          <div class="separator" id="empty-section"></div>
+          
+          <footer>
+            <div class="footer-container">
+              <div class="footer-logo">
+                <i class="fas fa-rocket"></i> 
+                <h1 class="footer-title">AstroLaunch Systems</h1>
+              </div>
+              <div class="footer-links">
+                <h2 class="footer-heading">Quick Links</h2>
+                <ul>
+                  <li><a href="#home">Home</a></li>
+                  <li><a href="#purpose-section">Missions</a></li>
+                  <li><a href="#approach-section">Approach</a></li>
+                  <li><a href="#about-section">About</a></li>
+                  <li><a href="#contact-section">Contact</a></li>
+                </ul>
+              </div>
+              <div class="footer-contact">
+                <h2 class="footer-heading">Contact Us</h2>
+                <p class="footer-info">
+                  <i class="fas fa-map-marker-alt"></i> 123 Main Street, City, Country
+                </p>
+                <p class="footer-info">
+                  <i class="fas fa-envelope"></i> info@astrolaunch.com
+                </p>
+                <p class="footer-info">
+                  <i class="fas fa-phone-alt"></i> +1 123-456-7890
+                </p>
+              </div>
+            </div>
+            <div class="footer-bottom">
+              <p>&copy; 2023 AstroLaunch Systems. All rights reserved.</p>
+            </div>
+          </footer>
+
+      </div>
+  </body>
+  <script src="https://kit.fontawesome.com/4e3a6a5a6d.js" crossorigin="anonymous"></script>
+  <script>
+    const prevButton = document.getElementById("prev-button");
+    const nextButton = document.getElementById("next-button");
+    const aboutImages = document.querySelector(".about-images");
+    const images = Array.from(aboutImages.querySelectorAll("img"));
+    const imageCount = images.length;
+    const galleryWidth = aboutImages.offsetWidth;
+    let currentIndex = 0;
+
+    function showImage(index) {
+        currentIndex = index;
+
+        images.forEach((image, i) => {
+            const opacity = i === currentIndex ? 1 : 0.4;
+
+            image.style.opacity = opacity;
+        });
+
+        const offset = -(currentIndex * 280);
+        aboutImages.style.transform = `translateX(${offset}px)`;
+    }
+
+    function handlePrevClick() {
+        currentIndex = (currentIndex - 1 + imageCount) % imageCount;
+        showImage(currentIndex);
+    }
+
+    function handleNextClick() {
+        currentIndex = (currentIndex + 1) % imageCount;
+        showImage(currentIndex);
+    }
+
+    prevButton.addEventListener("click", handlePrevClick);
+    nextButton.addEventListener("click", handleNextClick);
+
+    showImage(currentIndex);
+
+
+
+    document.addEventListener("mousemove", function(event) {
+        const spaceCursor = document.getElementById("space-cursor");
+        const spaceCircle = document.createElement("div");
+        spaceCircle.className = "space-circle";
+        spaceCircle.style.left = (event.clientX - 5) + "px";
+        spaceCircle.style.top = (event.clientY - 5) + "px";
+        spaceCursor.appendChild(spaceCircle);
+
+        // Remove circles after a certain duration
+        setTimeout(function() {
+            spaceCursor.removeChild(spaceCircle);
+        }, 300); // Adjust the duration as needed
+    });
+
+
+
+
+    // Get modal elements
+    const modalCoffee = document.getElementById("coffee-modal");
+    const modalFarming = document.getElementById("farming-modal");
+    const modalEntertainment = document.getElementById("entertainment-modal");
+    const modalTourism = document.getElementById("tourism-modal");
+
+    // Get button elements
+    const btnCoffee = document.getElementById("coffee-modal-btn");
+    const btnFarming = document.getElementById("farming-modal-btn");
+    const btnEntertainment = document.getElementById("entertainment-modal-btn");
+    const btnTourism = document.getElementById("tourism-modal-btn");
+
+    // Get close button elements
+    const closeBtnCoffee = modalCoffee.querySelector(".modal-close-button");
+    const closeBtnFarming = modalFarming.querySelector(".modal-close-button");
+    const closeBtnEntertainment = modalEntertainment.querySelector(".modal-close-button");
+    const closeBtnTourism = modalTourism.querySelector(".modal-close-button");
+
+    // Add click event listeners to buttons
+    btnCoffee.addEventListener("click", openModal.bind(null, modalCoffee));
+    btnFarming.addEventListener("click", openModal.bind(null, modalFarming));
+    btnEntertainment.addEventListener("click", openModal.bind(null, modalEntertainment));
+    btnTourism.addEventListener("click", openModal.bind(null, modalTourism));
+
+    // Add click event listeners to close buttons
+    closeBtnCoffee.addEventListener("click", closeModal.bind(null, modalCoffee));
+    closeBtnFarming.addEventListener("click", closeModal.bind(null, modalFarming));
+    closeBtnEntertainment.addEventListener("click", closeModal.bind(null, modalEntertainment));
+    closeBtnTourism.addEventListener("click", closeModal.bind(null, modalTourism));
+
+    // Function to open the modal
+    function openModal(modal) {
+    modal.classList.add("show");
+    }
+
+    // Function to close the modal
+    function closeModal(modal) {
+    modal.classList.remove("show");
+    }
+
+    // Close modal when the user clicks outside the modal content
+    window.addEventListener("click", function (event) {
+    if (event.target.classList.contains("modal")) {
+        event.target.classList.remove("show");
+    }
+    });
+
+    
+    
+    /* See Missions Scroll Item */
+    document.querySelector('.scroll-popup').addEventListener('click', () => {
+    // Scroll to the target section
+    const targetSection = document.querySelector('#purpose-section');
+    targetSection.scrollIntoView({ behavior: 'smooth' });
+    });
+
+    document.addEventListener("DOMContentLoaded", function() {
+    var scrollButton = document.querySelector(".scroll-button");
+    var scrollPopup = document.querySelector(".scroll-popup");
+
+    function handleScroll() {
+        if (window.scrollY > 0) {
+        scrollPopup.classList.add("hide");
+        } else {
+        scrollPopup.classList.remove("hide");
+        }
+    }
+
+    scrollButton.addEventListener("click", function(e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute("href")).scrollIntoView({
+        behavior: "smooth"
+        });
+    });
+
+    window.addEventListener("scroll", handleScroll);
+    });
+
+
+    // Select the elements you want to animate
+    const title = document.querySelector('.approach-title');
+    const steps = document.querySelectorAll('.approach-step');
+    const purposeItems = document.querySelectorAll('.purpose-item');
+    const purposeTitle = document.querySelector('.purpose-title');
+    const heroSection = document.querySelector('.hero-section');
+    const aboutSection = document.querySelector('.about-section');
+    const aboutTitle = document.querySelector('.about-title');
+    const aboutDescription = document.querySelector('.about-description');
+    const galleryContainer = document.querySelector('.gallery-container');
+    const arrowButtons = document.querySelectorAll('.arrow-button');
+    const contactSection = document.querySelector('.contact-section');
+    const formGroups = document.querySelectorAll('.form-group');
+
+    // Create a new Intersection Observer instance
+    const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+        // Add the "appear" class when the element is in the viewport
+        entry.target.classList.add('appear');
+        } else {
+        // Remove the "appear" class when the element is out of the viewport
+        entry.target.classList.remove('appear');
+        }
+    });
+    });
+
+    // Observe the elements
+    observer.observe(title);
+    observer.observe(purposeTitle);
+    observer.observe(heroSection);
+    observer.observe(aboutSection);
+    observer.observe(aboutTitle);
+    observer.observe(aboutDescription);
+    observer.observe(galleryContainer);
+    observer.observe(contactSection);
+    
+    formGroups.forEach((form) => {
+    observer.observe(form);
+    });
+    arrowButtons.forEach((arrow) => {
+    observer.observe(arrow);
+    });
+    steps.forEach((step) => {
+    observer.observe(step);
+    });
+    purposeItems.forEach((item) => {
+        observer.observe(item);
+    });
+
+
+
+  </script>
+</html>
